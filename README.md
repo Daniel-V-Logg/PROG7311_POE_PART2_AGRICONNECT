@@ -23,7 +23,7 @@ Before setting up the development environment, ensure you have the following ins
 1. Open a terminal or command prompt.
 2. Clone the repository using the command:
    ```
-   git clone https://github.com/yourusername/AgriEnergyConnect.git
+   git clone https://github.com/Daniel-V-Logg/PROG7311_POE_PART2_AGRICONNECT.git
    ```
 
 ### Setting up the Development Environment
