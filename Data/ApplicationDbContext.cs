@@ -11,6 +11,7 @@ namespace AgriEnergyConnect.Data
             : base(options) { }
 
         public DbSet<Product> products { get; set; }
+        public DbSet<Farmer> Farmers { get; set; }
 
     }
 }

@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\danie\OneDrive\Desktop\2025\PROG7311\POE\Part2\AgriEnergyConnect
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/danie/OneDrive/Desktop/2025/PROG7311/POE/Part2/AgriEnergyConnect/Views/Employees/AddFarmer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEFkZEZhcm1lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/danie/OneDrive/Desktop/2025/PROG7311/POE/Part2/AgriEnergyConnect/Views/Employees/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
