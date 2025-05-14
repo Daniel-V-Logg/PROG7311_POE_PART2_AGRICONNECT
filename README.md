@@ -1,74 +1,69 @@
 ﻿# PROG7311_POE_PART2_AGRICONNECT
 
-# AgriEnergyConnect
+# AgriEnergyConnect - Employee Management System
 
-AgriEnergyConnect is a web app to manage farmers and their operations. It allows adding, editing, and deleting farmers, with roles like Crop, Livestock, and Mixed Farmers. The app also supports product filtering and CRUD operations for farmers.
+This repository contains the code for **AgriEnergyConnect**, a simple web-based application designed to manage employee and farmer data. It allows admins to add, edit, and delete farmer details, and display them in a table for easy management.
 
-## Features
-
-- Manage farmers (add, edit, delete)
-- Categorize farmers by roles
-- View all farmers in a table
-- Future product management feature (filter by category and date)
-
-## Technologies Used
-
-- ASP.NET Core MVC
-- Entity Framework Core
-- SQL Server
-- Bootstrap
+## Table of Contents
+1. [Setup Instructions](#setup-instructions)
+2. [Running the Application](#running-the-application)
+3. [Features and Functionalities](#features-and-functionalities)
+4. [System User Roles](#system-user-roles)
+5. [License](#license)
 
 ## Setup Instructions
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/YourUsername/AgriEnergyConnect.git
-Install dependencies:
+### Prerequisites
+Before setting up the development environment, ensure you have the following installed on your system:
+- [Visual Studio](https://visualstudio.microsoft.com/) (for C#/.NET development)
+- [.NET SDK](https://dotnet.microsoft.com/download) (Version 6 or later)
+- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) or any other compatible database
 
-bash
-Always show details
+### Cloning the Repository
+1. Open a terminal or command prompt.
+2. Clone the repository using the command:
+   ```
+   git clone https://github.com/yourusername/AgriEnergyConnect.git
+   ```
 
-Copy
-dotnet restore
-Set up the database and run migrations:
+### Setting up the Development Environment
+1. Open the cloned repository in Visual Studio.
+2. Restore the project dependencies:
+   - In the **Solution Explorer**, right-click on the solution and select **Restore NuGet Packages**.
+3. Configure the database:
+   - Update the `ConnectionStrings` section in `appsettings.json` to point to your local or cloud database.
+   - Run the database migrations to set up the schema:
+     ```
+     dotnet ef migrations add InitialCreate
+     dotnet ef database update
+     ```
 
-bash
-Always show details
+### Running the Application
+1. Press `Ctrl + F5` (or click **Run** in Visual Studio) to start the application.
+2. Open a browser and navigate to:
+   ```
+   http://localhost:5000
+   ```
+   The application should now be running locally.
 
-Copy
-dotnet ef database update
-Run the application:
+## Running the Prototype
 
-bash
-Always show details
+Once the application is up and running, follow these steps to test the prototype:
 
-Copy
-dotnet run
-Visit https://localhost:5001 to access the app.
+1. **Add a Farmer**: Navigate to the *Add Farmer* section and fill out the form with the necessary information. Click **Add Farmer** to submit.
+2. **Edit a Farmer**: In the *All Farmers* table, click **Edit** next to a farmer to modify their details.
+3. **Delete a Farmer**: Click **Delete** next to a farmer to remove them from the database.
 
-Directory Structure
-pgsql
-Always show details
+## Features and Functionalities
 
-Copy
-AgriEnergyConnect/
-├── Controllers/
-│   └── EmployeesController.cs
-├── Data/
-│   └── ApplicationDbContext.cs
-├── Models/
-│   └── Farmer.cs
-├── Views/
-│   └── Employees/
-│       └── AddFarmer.cshtml
-│       └── Index.cshtml
-├── wwwroot/
-├── appsettings.json
-├── Program.cs
-├── Startup.cs
-Contributing
-Feel free to fork the repository and submit pull requests for improvements.
+- **Farmer Management**: Admins can add, edit, and delete farmer information.
+- **Role-Based Selection**: When adding or editing a farmer, users can select a role for the farmer (e.g., Crop Farmer, Livestock Farmer, Mixed Farmer).
+- **Farmer Table**: A list of all farmers with their details (Name, Surname, Role) is displayed in a table, with options to edit or delete.
 
-License
-MIT License
-"""
+## System User Roles
+
+- **Admin**: The primary role responsible for adding, editing, and deleting farmer data. They can also view all farmer details.
+  
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
