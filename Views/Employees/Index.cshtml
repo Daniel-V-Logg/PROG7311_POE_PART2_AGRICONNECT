@@ -1,0 +1,16 @@
+﻿@model IEnumerable<AgriEnergyConnect.Models.Product>
+
+<h2>All Products</h2>
+
+<form method="get">
+    <input type="text" name="category" placeholder="Filter by Category" />
+    <input type="date" name="date" />
+    <button type="submit">Filter</button>
+</form>
+
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.Name - @product.Category - @product.DateAdded.ToShortDateString()</li>
+    }
+</ul>

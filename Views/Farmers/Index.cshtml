@@ -1,0 +1,16 @@
+﻿@model IEnumerable<AgriEnergyConnect.Models.Product>
+
+<h2>Your Products</h2>
+
+<form asp-action="AddProduct" method="post">
+    <input type="text" name="Name" placeholder="Product Name" required />
+    <input type="text" name="Category" placeholder="Category" required />
+    <button type="submit">Add Product</button>
+</form>
+
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.Name - @product.Category</li>
+    }
+</ul>
