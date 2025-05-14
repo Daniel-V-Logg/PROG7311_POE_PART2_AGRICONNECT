@@ -1,0 +1,65 @@
+﻿@model AgriEnergyConnect.Models.AddFarmerViewModel
+
+@{
+    ViewData["Title"] = "Add Farmer";
+}
+
+<h2>@(Model.Farmer.FarmerId == 0 ? "Add" : "Edit") Farmer</h2>
+
+<form asp-action="AddFarmer" method="post">
+    <div class="form-group">
+        <label asp-for="Farmer.Name"></label>
+        <input asp-for="Farmer.Name" class="form-control" />
+        <span asp-validation-for="Farmer.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Farmer.Surname"></label>
+        <input asp-for="Farmer.Surname" class="form-control" />
+        <span asp-validation-for="Farmer.Surname" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Farmer.Role"></label>
+        <select asp-for="Farmer.Role" class="form-control" asp-items="ViewBag.Roles"></select>
+        <span asp-validation-for="Farmer.Role" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" asp-for="Farmer.FarmerId" />
+
+    <button type="submit" class="btn btn-primary">
+        @(Model.Farmer.FarmerId == 0 ? "Add Farmer" : "Update Farmer")
+    </button>
+</form>
+
+<hr />
+
+<h3>All Farmers</h3>
+
+@if (Model.AllFarmers != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var farmer in Model.AllFarmers)
+            {
+                <tr>
+                    <td>@farmer.Name</td>
+                    <td>@farmer.Surname</td>
+                    <td>@farmer.Role</td>
+                    <td>
+                        <a class="btn btn-sm btn-info" asp-action="AddFarmer" asp-route-id="@farmer.FarmerId">Edit</a>
+                        <a class="btn btn-sm btn-danger" asp-action="DeleteFarmer" asp-route-id="@farmer.FarmerId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
